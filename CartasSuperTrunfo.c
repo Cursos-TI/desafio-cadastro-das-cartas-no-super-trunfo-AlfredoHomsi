@@ -1,13 +1,17 @@
 #include <stdio.h>
 int main() {
 //variaveis↓
-    int populacao1, populacao2, pontos_turisticos1, pontos_turisticos2;
+    
+    int  pontos_turisticos1, pontos_turisticos2;
+    unsigned int populacao1, populacao2;
     float area1, area2, pib1, pib2;
     float densidade_populacional1= populacao1 / area1;
     float densidade_populacional2= populacao2 / area2;
 //operadores matematicos↓
     float pib_per_capita1= pib1 / populacao1;
     float pib_per_capita2= pib2 / populacao2;
+    float super_poder1= populacao1 + area1 + pib1 + pontos_turisticos1 + pib_per_capita1 / 1;
+    float super_poder2= populacao2 + area2 + pib2 + pontos_turisticos2 + pib_per_capita2 / 1;
     char nome1[50], nome2[50], estado1[50], estado2[50], codigo1[50], codigo2[50];
 //funções para coletar os dados da primeira carta↓
     printf("Digite o nome da primeira carta: \n");
@@ -73,6 +77,15 @@ int main() {
     printf("-A densidade populacional da segunda carta é: \n %f \n", densidade_populacional2);
     printf("-O PIB per capita da segunda carta é: \n %f \n \n", pib_per_capita2);
   
+//funções de comparação↓ (se aparecer 0 significa que a arta 1 venceu, mas se aparecer 0 é por que a carta 2 venceu)
+    printf("população: %d\n", populacao1 > populacao2);
+    printf("Pontos turísticos: %d\n", pontos_turisticos1 > pontos_turisticos2);
+    printf("PIB: %f\n", pib1 > pib2);
+    printf("Área: %f\n", area1 > area2);
+    printf("Densidade populacional: %f\n", densidade_populacional1 > densidade_populacional2);
+    printf("PIB per capita: %f\n", pib_per_capita1 > pib_per_capita2);
+    printf("Super poder: %f\n", super_poder1 > super_poder2);
+
     return 0;
 
 }
